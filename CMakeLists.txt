@@ -14,6 +14,14 @@ else()
     add_library(${TARGET} ${VECTOR_SOURCE})
 endif()
 
+option(TESTING OFF)
+if(TESTING)
+    enable_testing()
+    add_compile_options("-lcriterion" "--coverage" "-fprofile-arcs" "-ftest-coverage")
+    add_link_options("-lcriterion" "--coverage" "-fprofile-arcs" "-ftest-coverage")
+    add_subdirectory(tests)
+endif()
+
 target_include_directories(${TARGET}
     PUBLIC ${VECTOR_INCLUDE_ROOT}
 )
