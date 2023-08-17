@@ -1,0 +1,38 @@
+name: Documentation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  Documentation:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install submodules
+        run: git submodule update --init --recursive
+
+      - name: Create Vector documentation
+        uses: mattnotmitt/doxygen-action@v1.9.5
+        with:
+          working-directory: ./
+          doxyfile-path: ./doxyfile
+
+      - name: Create Vector documentation artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Vector_documentation
+          path: ./docs/html
+
+      - name: Upload Vector documentation
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./docs/html
+          target-folder: docs/Vector
