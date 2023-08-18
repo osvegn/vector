@@ -4,10 +4,6 @@ set(SOURCE
     ${VECTOR_TESTS_ROOT}/vector_tests.c
 )
 
-add_executable(${TARGET} ${SOURCE})
-
-target_link_libraries(${TARGET}
-    vector
-)
+add_executable(${TARGET} ${SOURCE} ${VECTOR_SOURCE})
 
 add_test(${TARGET} ${TARGET})
