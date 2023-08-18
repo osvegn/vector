@@ -1,3 +1,5 @@
+project(Vector)
+
 set(VECTOR_SOURCE_ROOT ${PROJECT_SOURCE_DIR}/source)
 set(VECTOR_INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/include)
 set(TARGET vector)
