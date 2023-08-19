@@ -44,9 +44,38 @@ Test(vector_emplace, vector_emplace)
     int data = 10;
 
     cr_assert_eq(rvalue, 0);
-    vector.emplace(&vector, &data, 0);
+    rvalue = vector.emplace(&vector, &data, 0);
+    cr_assert_eq(rvalue, 0);
     vector.destructor(&vector);
-    cr_assert_eq(0, 0);
+}
+
+Test(vector_emplace, vector_emplace_high_index)
+{
+    vector_t vector;
+    int rvalue = vector_constructor(&vector, sizeof(int), 0);
+    int data = 10;
+
+    cr_assert_eq(rvalue, 0);
+    rvalue = vector.emplace(&vector, &data, 1);
+    cr_assert_eq(rvalue, -1);
+    vector.destructor(&vector);
+}
+
+Test(vector_emplace, vector_emplace_middle_index)
+{
+    vector_t vector;
+    int rvalue = vector_constructor(&vector, sizeof(int), 5);
+    int data = 10;
+
+    cr_assert_eq(rvalue, 0);
+    for (int i = 0; i < 5; i++) {
+        vector.emplace_back(&vector, &data);
+        data++;
+    }
+    rvalue = vector.emplace(&vector, &data, 1);
+    cr_assert_eq(rvalue, 0);
+    cr_assert_eq(*(int *)vector.at(&vector, 1), data);
+    vector.destructor(&vector);
 }
 
 Test(vector_clear, vector_clear)
@@ -267,7 +296,7 @@ Test(vector_shrink_to_fit, vector_shrink_to_fit_success)
     vector.destructor(&vector);
 }
 
-Test(vecotr_erase, vector_erase_valid)
+Test(vector_erase, vector_erase_valid)
 {
     vector_t vector;
     int rvalue = vector_constructor(&vector, sizeof(int), 10);
@@ -280,5 +309,62 @@ Test(vecotr_erase, vector_erase_valid)
     }
     cr_assert_eq(vector.erase(&vector, 1), 0);
     cr_assert_eq(*(int *)vector.at(&vector, 1), 12);
+    vector.destructor(&vector);
+}
+
+Test(vector_erase, vector_erase_invalid)
+{
+    vector_t vector;
+    int rvalue = vector_constructor(&vector, sizeof(int), 10);
+    int data = 10;
+
+    cr_assert_eq(rvalue, 0);
+    for (int i = 0; i < 10; i++) {
+        vector.emplace_back(&vector, &data);
+        data++;
+    }
+    cr_assert_eq(vector.erase(&vector, 11), -1);
+    vector.destructor(&vector);
+}
+
+Test(vector_erase, vector_erase_limite_value)
+{
+    vector_t vector;
+    int rvalue = vector_constructor(&vector, sizeof(int), 10);
+    int data = 10;
+
+    cr_assert_eq(rvalue, 0);
+    for (int i = 0; i < 10; i++) {
+        vector.emplace_back(&vector, &data);
+        data++;
+    }
+    cr_assert_eq(vector.erase(&vector, 10), -1);
+    vector.destructor(&vector);
+}
+
+Test(vector_pop_back, vector_pop_back_valid)
+{
+    vector_t vector;
+    int rvalue = vector_constructor(&vector, sizeof(int), 10);
+    int data = 10;
+
+    cr_assert_eq(rvalue, 0);
+    for (int i = 0; i < 10; i++) {
+        vector.emplace_back(&vector, &data);
+        data++;
+    }
+    cr_assert_eq(vector.size(&vector), 10);
+    cr_assert_eq(vector.pop_back(&vector), 0);
+    cr_assert_eq(vector.size(&vector), 9);
+    vector.destructor(&vector);
+}
+
+Test(vector_pop_back, vector_pop_back_invalid)
+{
+    vector_t vector;
+    int rvalue = vector_constructor(&vector, sizeof(int), 0);
+    cr_assert_eq(vector.size(&vector), 0);
+    cr_assert_eq(vector.pop_back(&vector), 0);
+    cr_assert_eq(vector.size(&vector), 0);
     vector.destructor(&vector);
 }

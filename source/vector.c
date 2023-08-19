@@ -121,7 +121,7 @@ static int clear(vector_t *this)
 /// @return 0, or -1 if an error occurs.
 static int erase(vector_t *this, unsigned int index)
 {
-    if (index > this->_size)
+    if (index >= this->_size)
         return -1;
     memcpy((char *)this->pointer + index * this->_element_size, (char *)this->pointer + (index + 1) * this->_element_size, (this->_size - (index + 1)) * this->_element_size);
     this->_size--;
@@ -133,7 +133,8 @@ static int erase(vector_t *this, unsigned int index)
 /// @return 0.
 static int pop_back(vector_t *this)
 {
-    this->_size--;
+    if (this->_size > 0)
+        this->_size--;
     return 0;
 }
 
