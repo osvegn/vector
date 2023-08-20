@@ -68,6 +68,14 @@ jobs:
           cd build
           ctest --output-on-failure
           cd ..
+      
+      - name: Check memory leaks
+        run: |
+          cd build
+          files=$(find . -name "test_*" -executable)
+          for file in $files; do
+            valgrind --leak-check=full --error-exitcode=1 ./$file
+          done
 
       - name: Coverage report
         run: |
