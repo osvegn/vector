@@ -13,7 +13,7 @@ function (create_test)
     endif()
 
     set (SRC "${create_test_TEST_SRC}")
-    set (TEST_NAME "${create_test_TEST_NAME}")
+    set (TEST_NAME "test_${create_test_TEST_NAME}")
     set (TEST_DEPS "${create_test_TEST_DEPS}")
     set (TEST_INCLUDE "${create_test_TEST_INCLUDE}")
     add_executable(${TEST_NAME} ${SRC})
@@ -27,7 +27,7 @@ set(SRC
 )
 
 create_test(
-    TEST_NAME test_vector_of_int
+    TEST_NAME vector_of_int
     TEST_SRC ${SRC}
     TEST_DEPS vector
     TEST_INCLUDE ${PROJECT_SOURCE_DIR}/include
@@ -38,7 +38,7 @@ set(SRC
 )
 
 create_test(
-    TEST_NAME test_vector_of_string
+    TEST_NAME vector_of_string
     TEST_SRC ${SRC}
     TEST_DEPS vector
     TEST_INCLUDE ${PROJECT_SOURCE_DIR}/include
