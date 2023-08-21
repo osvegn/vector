@@ -38,6 +38,7 @@ int main(void)
     while (vector.size(&vector)) {
         v = *(vector_t *)vector.back(&vector);
         v.destructor(&v);
+        v.pop_back(&v);
     }
     vector.destructor(&vector);
     return 0;
