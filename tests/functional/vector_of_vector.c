@@ -8,6 +8,7 @@
  */
 
 #include "vector.h"
+#include <stdio.h>
 
 static int my_return(int value, char *message)
 {
