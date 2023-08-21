@@ -43,3 +43,14 @@ create_test(
     TEST_DEPS vector
     TEST_INCLUDE ${PROJECT_SOURCE_DIR}/include
 )
+
+set(SRC
+    ${VECTOR_TESTS_ROOT}/vector_of_vector.c
+)
+
+create_test(
+    TEST_NAME vector_of_vector
+    TEST_SRC ${SRC}
+    TEST_DEPS vector
+    TEST_INCLUDE ${PROJECT_SOURCE_DIR}/include
+)
