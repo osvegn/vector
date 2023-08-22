@@ -35,6 +35,34 @@ jobs:
           cmake -B build
           cmake --build build
 
+  functional-tests:
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, windows-2019, macos-11.0]
+        include:
+          - os: ubuntu-22.04
+            compiler: gcc
+          - os: ubuntu-22.04
+            compiler: clang
+          - os: windows-2019
+            compiler: msvc
+          - os: macos-11.0
+            compiler: clang
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build
+        run: |
+          cmake -B build -DFUNCTIONAL_TESTING=ON
+          cmake --build build
+
+      - name: Functional tests
+        run: |
+          cd build
+          ctest --output-on-failure
+
   tests-linux:
     runs-on: ubuntu-22.04
     needs: build
