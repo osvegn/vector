@@ -8,11 +8,27 @@
  */
 
 #include <criterion/criterion.h>
+#include <criterion/redirect.h>
 #include "vector.h"
 
 Test(a, a)
 {
     cr_assert_eq(1, 1);
+}
+
+static int print_int_test(void *data)
+{
+    int value = CAST(int, data);
+
+    printf("%i", value);
+    fflush(stdout);
+    return 0;
+}
+
+static void redirect_all_stdout(void)
+{
+    cr_redirect_stderr();
+    cr_redirect_stdout();
 }
 
 Test(construct_vector, construct_vector)
@@ -366,5 +382,41 @@ Test(vector_pop_back, vector_pop_back_invalid)
     cr_assert_eq(vector.size(&vector), 0);
     cr_assert_eq(vector.pop_back(&vector), 0);
     cr_assert_eq(vector.size(&vector), 0);
+    vector.destructor(&vector);
+}
+
+Test(vector_print_at, vector_print_at, .init = redirect_all_stdout)
+{
+    vector_t vector;
+    int rvalue = vector_constructor(&vector, sizeof(int), 0);
+    int data = 10;
+
+    vector.emplace_back(&vector, &data);
+    cr_assert_eq(vector.print_at(&vector, 0, &print_int_test), 0);
+    cr_assert_stdout_eq_str("10");
+    vector.destructor(&vector);
+}
+
+Test(vector_print_at, vector_print_at_invalid_index, .init = redirect_all_stdout)
+{
+    vector_t vector;
+    int rvalue = vector_constructor(&vector, sizeof(int), 0);
+    int data = 10;
+
+    vector.emplace_back(&vector, &data);
+    cr_assert_eq(vector.print_at(&vector, 10, &print_int_test), -1);
+    vector.destructor(&vector);
+}
+
+Test(vector_print, vector_print, .init = redirect_all_stdout)
+{
+    vector_t vector;
+    int rvalue = vector_constructor(&vector, sizeof(int), 0);
+
+    for (int i = 10; i < 13; i++) {
+        vector.emplace_back(&vector, &i);
+    }
+    cr_assert_eq(vector.print(&vector, &print_int_test), 0);
+    cr_assert_stdout_eq_str("[10, 11, 12]\n");
     vector.destructor(&vector);
 }
