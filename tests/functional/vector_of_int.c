@@ -14,6 +14,7 @@ static int my_return(int value, char *message)
 {
     printf("%s\n", message);
     fflush(stdout);
+    return value;
 }
 
 int main(void)
