@@ -1,30 +1,24 @@
 var indexSectionsWithContent =
 {
-  0: "_abcdefpsv",
+  0: "cv",
   1: "v",
   2: "v",
-  3: "v",
-  4: "_abcdefps",
-  5: "v"
+  3: "c"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "classes",
-  2: "files",
-  3: "functions",
-  4: "variables",
-  5: "typedefs"
+  1: "files",
+  2: "functions",
+  3: "defines"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Data Structures",
-  2: "Files",
-  3: "Functions",
-  4: "Variables",
-  5: "Typedefs"
+  1: "Files",
+  2: "Functions",
+  3: "Macros"
 };
 

@@ -90,9 +90,7 @@ $(document).ready(function(){initNavTree('vector_8h.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">vector.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -118,84 +116,37 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="vector_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvector__s.html">vector_s</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vector structure is used to store multiple data from the same type allong the memory. It stores some informations such as the size of an element, the number of element, the total number of element, the available number of element, and a pointer to the beginning of the memory.  <a href="structvector__s.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a3e6d9188e3746a41245df8f0a6a11443"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structvector__s.html">vector_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a3e6d9188e3746a41245df8f0a6a11443">vector_t</a></td></tr>
-<tr class="memdesc:a3e6d9188e3746a41245df8f0a6a11443"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vector structure is used to store multiple data from the same type allong the memory. It stores some informations such as the size of an element, the number of element, the total number of element, the available number of element, and a pointer to the beginning of the memory.  <a href="vector_8h.html#a3e6d9188e3746a41245df8f0a6a11443">More...</a><br /></td></tr>
-<tr class="separator:a3e6d9188e3746a41245df8f0a6a11443"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a2d09f0a5368447bae3801583ca227055"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a2d09f0a5368447bae3801583ca227055">vector_constructor</a> (<a class="el" href="vector_8h.html#a3e6d9188e3746a41245df8f0a6a11443">vector_t</a> *this, unsigned int element_size, unsigned int element_number)</td></tr>
-<tr class="memdesc:a2d09f0a5368447bae3801583ca227055"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the constructor of the vector structure. It set all default value and member function pointer.  <a href="vector_8h.html#a2d09f0a5368447bae3801583ca227055">More...</a><br /></td></tr>
-<tr class="separator:a2d09f0a5368447bae3801583ca227055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a015dfee129875688293180ddef474138"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8h.html#a015dfee129875688293180ddef474138">CAST</a>(type,  value)&#160;&#160;&#160;(*(type *)value)</td></tr>
+<tr class="separator:a015dfee129875688293180ddef474138"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a3e6d9188e3746a41245df8f0a6a11443" name="a3e6d9188e3746a41245df8f0a6a11443"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e6d9188e3746a41245df8f0a6a11443">&#9670;&#160;</a></span>vector_t</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a015dfee129875688293180ddef474138" name="a015dfee129875688293180ddef474138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a015dfee129875688293180ddef474138">&#9670;&#160;</a></span>CAST</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="structvector__s.html">vector_s</a> <a class="el" href="vector_8h.html#a3e6d9188e3746a41245df8f0a6a11443">vector_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The vector structure is used to store multiple data from the same type allong the memory. It stores some informations such as the size of an element, the number of element, the total number of element, the available number of element, and a pointer to the beginning of the memory. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a2d09f0a5368447bae3801583ca227055" name="a2d09f0a5368447bae3801583ca227055"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d09f0a5368447bae3801583ca227055">&#9670;&#160;</a></span>vector_constructor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int vector_constructor </td>
+          <td class="memname">#define CAST</td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="vector_8h.html#a3e6d9188e3746a41245df8f0a6a11443">vector_t</a> *&#160;</td>
-          <td class="paramname"><em>this</em>, </td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>element_size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>element_number</em>&#160;</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">value&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td>&#160;&#160;&#160;(*(type *)value)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>This is the constructor of the vector structure. It set all default value and member function pointer. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">this</td><td>The vector to be construct. </td></tr>
-    <tr><td class="paramname">element_size</td><td>The size of an element of the vector. Use sizeof() to know the size of your type. </td></tr>
-    <tr><td class="paramname">element_number</td><td>The number of element you want to allow in vector memory at the beginning. It can be increase during the runtime. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0, or -1 if an error occurs. </dd></dl>
 
 </div>
 </div>
