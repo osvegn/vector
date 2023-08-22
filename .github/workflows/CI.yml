@@ -73,7 +73,7 @@ jobs:
         run: |
           sudo apt-get install valgrind -y
           cd build
-          files=$(find . -name "test_*" -executable)
+          files=$(find . -name "test_*" -executable -type f)
           for file in $files; do
             valgrind --leak-check=full --error-exitcode=1 ./$file
           done
