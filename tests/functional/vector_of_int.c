@@ -28,7 +28,7 @@ int main(void)
         if (rvalue < 0)
             return my_return(rvalue, "Emplace_back failure.");
     }
-    if (*(int *)vector.front(&vector) != 0)
+    if (CAST(int, vector.front(&vector)) != 0)
         return my_return(rvalue, "Front failure.");
     vector.destructor(&vector);
     return 0;

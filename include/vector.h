@@ -12,6 +12,14 @@
 
 #include <stdbool.h>
 
+/// @brief This maccro should help to cast a value to the desire type.
+/// Functions from vector mostly return pointer to data, it can be usefull
+/// to cast to corresponding data type. 
+/// @code
+/// // Assume vector contains int data.
+/// int rvalue = CAST(int, vector.front(&vector))
+#define CAST(type, value) (*(type *)value)
+
 /// @brief The vector structure is used to store multiple data from the same
 /// type allong the memory.
 /// It stores some informations such as the size of an element, the number of

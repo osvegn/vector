@@ -30,7 +30,7 @@ int main(void)
         if (rvalue < 0)
             return my_return(rvalue, "Emplace_back failure.");
     }
-    if (strcmp((char *)*(char **)vector.front(&vector), av[0]))
+    if (strcmp(CAST(char *, vector.front(&vector)), av[0]))
         return my_return(rvalue, "Front failure.");
     vector.destructor(&vector);
     return 0;

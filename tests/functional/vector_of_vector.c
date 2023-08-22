@@ -36,7 +36,7 @@ int main(void)
             my_return(1, "Failed to emplace_back in vector.");
     }
     while (vector.size(&vector)) {
-        v = *(vector_t *)vector.back(&vector);
+        v = CAST(vector_t, vector.back(&vector));
         v.destructor(&v);
         vector.pop_back(&vector);
     }
