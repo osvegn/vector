@@ -48,9 +48,21 @@ Test(vector_emplace_back, vector_emplace_back)
     int data = 10;
 
     cr_assert_eq(rvalue, 0);
-    vector.emplace_back(&vector, &data);
+    rvalue = vector.emplace_back(&vector, &data);
+    cr_assert_eq(rvalue, 0);
     vector.destructor(&vector);
-    cr_assert_eq(0, 0);
+}
+
+Test(vector_emplace_back, vector_emplace_back_null_data)
+{
+    vector_t vector;
+    int rvalue = vector_constructor(&vector, sizeof(char), 0);
+    char data = 10;
+
+    cr_assert_eq(rvalue, 0);
+    rvalue = vector.emplace_back(&vector, NULL);
+    cr_assert_eq(rvalue, -1);
+    vector.destructor()
 }
 
 Test(vector_emplace, vector_emplace)
@@ -73,6 +85,18 @@ Test(vector_emplace, vector_emplace_high_index)
 
     cr_assert_eq(rvalue, 0);
     rvalue = vector.emplace(&vector, &data, 1);
+    cr_assert_eq(rvalue, -1);
+    vector.destructor(&vector);
+}
+
+Test(vector_emplace, vector_emplace_null_data)
+{
+    vector_t vector;
+    int rvalue = vector_constructor(&vector, sizeof(int), 0);
+    int data = 10;
+
+    cr_assert_eq(rvalue, 0);
+    rvalue = vector.emplace(&vector, NULL, 1);
     cr_assert_eq(rvalue, -1);
     vector.destructor(&vector);
 }
@@ -397,6 +421,17 @@ Test(vector_print_at, vector_print_at, .init = redirect_all_stdout)
     vector.destructor(&vector);
 }
 
+Test(vector_print_at, vector_print_at_null_function_pointer)
+{
+    vector_t vector;
+    int rvalue = vector_constructor(&vector, sizeof(int), 0);
+    int data = 10;
+
+    vector.emplace_back(&vector, &data);
+    cr_assert_eq(vector.print_at(&vector, 0, NULL), -1);
+    vector.destructor(&vector);
+}
+
 Test(vector_print_at, vector_print_at_invalid_index, .init = redirect_all_stdout)
 {
     vector_t vector;
@@ -418,5 +453,17 @@ Test(vector_print, vector_print, .init = redirect_all_stdout)
     }
     cr_assert_eq(vector.print(&vector, &print_int_test), 0);
     cr_assert_stdout_eq_str("[10, 11, 12]\n");
+    vector.destructor(&vector);
+}
+
+Test(vector_print, vector_print_null_function_pointer)
+{
+    vector_t vector;
+    int rvalue = vector_constructor(&vector, sizeof(int), 0);
+
+    for (int i = 10; i < 13; i++) {
+        vector.emplace_back(&vector, &i);
+    }
+    cr_assert_eq(vector.print(&vector, NULL), -1);
     vector.destructor(&vector);
 }

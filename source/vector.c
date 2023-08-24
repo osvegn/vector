@@ -185,7 +185,7 @@ static int emplace(vector_t *this, void *data, unsigned int index)
 {
     void *ptr = NULL;
 
-    if (index > this->_capacity)
+    if (index > this->_capacity || !data)
         return -1;
     if (this->_size == this->_capacity) {
         this->pointer = realloc(this->pointer, (this->_capacity + 1) * this->_element_size);
@@ -209,6 +209,8 @@ static int emplace(vector_t *this, void *data, unsigned int index)
 /// @return 0, or -1 if an error occurs.
 static int emplace_back(vector_t *this, void *data)
 {
+    if (!data)
+        return -1;
     if (this->_size == this->_capacity) {
         this->pointer = realloc(this->pointer, (this->_capacity + 1) * this->_element_size);
         if (!this->pointer)
