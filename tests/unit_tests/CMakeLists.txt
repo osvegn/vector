@@ -41,7 +41,9 @@ endfunction()
 
 foreach(SOURCE ${SOURCES})
     create_test(
-        string(REPLACE "/" " " NAME ${SOURCE})
+        string(REPLACE "/" " " SOURCE_LIST ${SOURCE})
+        list(LENGTH ${SOURCE_LIST} LIST_LENGTH)
+        list(GET ${SOURCE_LIST} ${LIST_LENGTH} NAME)
         TEST_NAME test_${NAME}
         TEST_SRC ${SOURCE}
         TEST_DEPS vector
