@@ -62,7 +62,7 @@ Test(vector_emplace_back, vector_emplace_back_null_data)
     cr_assert_eq(rvalue, 0);
     rvalue = vector.emplace_back(&vector, NULL);
     cr_assert_eq(rvalue, -1);
-    vector.destructor()
+    vector.destructor();
 }
 
 Test(vector_emplace, vector_emplace)
