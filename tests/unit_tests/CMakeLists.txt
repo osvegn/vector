@@ -41,7 +41,8 @@ endfunction()
 
 foreach(SOURCE ${SOURCES})
     create_test(
-        TEST_NAME test_${SOURCE}
+        string(REPLACE "/" " " NAME ${SOURCE})
+        TEST_NAME test_${NAME}
         TEST_SRC ${SOURCE}
         TEST_DEPS vector
         TEST_INCLUDE ${PROJECT_SOURCE_DIR}/include
