@@ -56,11 +56,10 @@ function (create_test)
 endfunction()
 
 foreach(SOURCE ${SOURCES})
+    string(REPLACE "/" ";" SOURCE_LIST ${SOURCE})
+    list(GET SOURCE_LIST -1 T_NAME)
     create_test(
-        string(REPLACE "/" " " SOURCE_LIST ${SOURCE})
-        list(LENGTH ${SOURCE_LIST} LIST_LENGTH)
-        list(GET ${SOURCE_LIST} ${LIST_LENGTH} NAME)
-        TEST_NAME test_${NAME}
+        TEST_NAME ${T_NAME}
         TEST_SRC ${SOURCE}
         TEST_DEPS vector
         TEST_INCLUDE ${PROJECT_SOURCE_DIR}/include
