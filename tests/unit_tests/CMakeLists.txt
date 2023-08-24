@@ -3,7 +3,23 @@ set(VECTOR_TESTS_ROOT ${PROJECT_SOURCE_DIR}/tests/unit_tests)
 
 # set(TARGET vector_tests)
 set(SOURCES
-    ${VECTOR_TESTS_ROOT}/vector_tests.c
+    ${VECTOR_TESTS_ROOT}/vector_at.c
+    ${VECTOR_TESTS_ROOT}/vector_back.c
+    ${VECTOR_TESTS_ROOT}/vector_capacity.c
+    ${VECTOR_TESTS_ROOT}/vector_clear.c
+    ${VECTOR_TESTS_ROOT}/vector_constructor.c
+    ${VECTOR_TESTS_ROOT}/vector_destructor.c
+    ${VECTOR_TESTS_ROOT}/vector_emplace_back.c
+    ${VECTOR_TESTS_ROOT}/vector_emplace.c
+    ${VECTOR_TESTS_ROOT}/vector_empty.c
+    ${VECTOR_TESTS_ROOT}/vector_erase.c
+    ${VECTOR_TESTS_ROOT}/vector_front.c
+    ${VECTOR_TESTS_ROOT}/vector_pop_back.c
+    ${VECTOR_TESTS_ROOT}/vector_print.c
+    ${VECTOR_TESTS_ROOT}/vector_print_at.c
+    ${VECTOR_TESTS_ROOT}/vector_shrink_to_fit.c
+    ${VECTOR_TESTS_ROOT}/vector_size.c
+    ${VECTOR_TESTS_ROOT}/vector_swap.c
 )
 
 add_compile_options("-lcriterion" "--coverage" "-fprofile-arcs" "-ftest-coverage")
