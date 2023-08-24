@@ -1,4 +1,4 @@
-# set(VECTOR_TESTS_ROOT ${PROJECT_SOURCE_DIR}/tests/unit_tests)
+set(VECTOR_TESTS_ROOT ${PROJECT_SOURCE_DIR}/tests/unit_tests)
 # set(VECTOR_INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/include)
 
 # set(TARGET vector_tests)
