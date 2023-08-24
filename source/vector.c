@@ -164,8 +164,7 @@ static int print(vector_t *this, int (*print_fct)(void *data))
     printf("[");
     fflush(stdout);
     for (unsigned int i = 0; i < this->_size; i++) {
-        if (this->print_at(this, i, print_fct) < 0)
-            return -1;
+        this->print_at(this, i, print_fct);
         if (i + 1 < this->_size) {
             printf(", ");
             fflush(stdout);
