@@ -148,7 +148,7 @@ static int pop_back(vector_t *this)
 /// @return It returns the value of print_fct, or -1 if an error occurs.
 static int print_at(vector_t *this, unsigned int index, int (*print_fct)(void *data))
 {
-    if (index > this->_size)
+    if (index > this->_size || !print_fct)
         return -1;
     return print_fct((char *)this->pointer + index * this->_element_size);
 }
@@ -161,6 +161,8 @@ static int print_at(vector_t *this, unsigned int index, int (*print_fct)(void *d
 /// @return 0, or -1 if print_fct return -1.
 static int print(vector_t *this, int (*print_fct)(void *data))
 {
+    if (!print_fct)
+        return -1;
     printf("[");
     fflush(stdout);
     for (unsigned int i = 0; i < this->_size; i++) {
