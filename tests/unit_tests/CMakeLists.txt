@@ -1,4 +1,5 @@
 set(VECTOR_TESTS_ROOT ${PROJECT_SOURCE_DIR}/tests/unit_tests)
+set(CRITERION_INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/submodules/Criterion/include)
 # set(VECTOR_INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/include)
 
 # set(TARGET vector_tests)
@@ -62,6 +63,6 @@ foreach(SOURCE ${SOURCES})
         TEST_NAME ${T_NAME}
         TEST_SRC ${SOURCE}
         TEST_DEPS vector
-        TEST_INCLUDE ${PROJECT_SOURCE_DIR}/include
+        TEST_INCLUDE ${PROJECT_SOURCE_DIR}/include ${CRITERION_INCLUDE_ROOT}
     )
 endforeach()
