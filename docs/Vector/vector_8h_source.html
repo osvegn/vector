@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ECS: include/vector.h Source File</title>
+<title>Vector: include/vector.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,7 +18,6 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -27,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ECS
+   <div id="projectname">Vector
    </div>
   </td>
  </tr>
@@ -110,54 +109,67 @@ $(document).ready(function(){initNavTree('vector_8h_source.html',''); initResiza
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define CAST(type, value) (*(type *)value)</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">typedef</span> <span class="keyword">struct </span>vector_s {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _element_size;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _size;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _capacity;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> *pointer;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    void (*destructor)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    int (*emplace)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>, <span class="keywordtype">void</span> *data, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    int (*emplace_back)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>, <span class="keywordtype">void</span> *data);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    int (*print_at)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index, int (*print_fct)(<span class="keywordtype">void</span> *data));</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    int (*print)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>, int (*print_fct)(<span class="keywordtype">void</span> *data));</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    int (*clear)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    int (*erase)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    int (*pop_back)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    int (*swap)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> first_element, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> second_element);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">void</span> *(*at)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordtype">void</span> *(*back)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">void</span> *(*front)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    bool (*empty)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">unsigned</span> int (*size)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordtype">unsigned</span> int (*capacity)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    int (*shrink_to_fit)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>} vector_t;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="keywordtype">int</span> <a class="code hl_function" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055">vector_constructor</a>(vector_t *<span class="keyword">this</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> element_size, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> element_number);</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">typedef</span> <span class="keyword">struct </span>vector_s {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _element_size;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _size;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _capacity;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> *pointer;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    void (*<a class="code hl_function" href="vector_8c.html#a15a77c0234cc96dea433b2106cb55f37">destructor</a>)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    int (*<a class="code hl_function" href="vector_8c.html#a04300d5fbd80537d62376d156c9ec278">emplace</a>)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>, <span class="keywordtype">void</span> *data, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    int (*<a class="code hl_function" href="vector_8c.html#a2b9322e48ab0afd5795cae35faa40e5c">emplace_back</a>)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>, <span class="keywordtype">void</span> *data);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    int (*<a class="code hl_function" href="vector_8c.html#a923619a7666b9044e661376bee1dc68f">print_at</a>)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index, int (*print_fct)(<span class="keywordtype">void</span> *data));</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    int (*<a class="code hl_function" href="vector_8c.html#aa92106e7fa70911663a24b5b027f6d77">print</a>)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>, int (*print_fct)(<span class="keywordtype">void</span> *data));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    int (*<a class="code hl_function" href="vector_8c.html#a944b10e1bde0c4bf822e0cb0c45f4218">clear</a>)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    int (*<a class="code hl_function" href="vector_8c.html#a6b34223d9ed00195819977242bcfe5cf">erase</a>)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    int (*<a class="code hl_function" href="vector_8c.html#a0abea506ea6c562b65e153d7a2f39a53">pop_back</a>)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    int (*<a class="code hl_function" href="vector_8c.html#a0cb1843ea9e466c0da6e704969fbf20b">swap</a>)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> first_element, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> second_element);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">void</span> *(*at)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">void</span> *(*back)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordtype">void</span> *(*front)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    bool (*<a class="code hl_function" href="vector_8c.html#a03e4f195e185c321ede45a023da9bbed">empty</a>)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordtype">unsigned</span> int (*<a class="code hl_function" href="vector_8c.html#ad6eeea794e85c97e7d376a5169a9683b">size</a>)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordtype">unsigned</span> int (*<a class="code hl_function" href="vector_8c.html#a88b49d015c4f2e3b807182af76e4f9c1">capacity</a>)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    int (*<a class="code hl_function" href="vector_8c.html#a6a5ee289dfbec2bc53d1f677d55604e6">shrink_to_fit</a>)(<span class="keyword">struct </span>vector_s *<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>} vector_t;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="keywordtype">int</span> <a class="code hl_function" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055">vector_constructor</a>(vector_t *<span class="keyword">this</span>, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> element_size, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> element_number);</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">#endif </span><span class="comment">/* !VECTOR_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="preprocessor">#endif </span><span class="comment">/* !VECTOR_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="avector_8c_html_a03e4f195e185c321ede45a023da9bbed"><div class="ttname"><a href="vector_8c.html#a03e4f195e185c321ede45a023da9bbed">empty</a></div><div class="ttdeci">static bool empty(vector_t *this)</div><div class="ttdoc">It returns if the vector is empty or not.</div><div class="ttdef"><b>Definition:</b> vector.c:101</div></div>
+<div class="ttc" id="avector_8c_html_a04300d5fbd80537d62376d156c9ec278"><div class="ttname"><a href="vector_8c.html#a04300d5fbd80537d62376d156c9ec278">emplace</a></div><div class="ttdeci">static int emplace(vector_t *this, void *data, unsigned int index)</div><div class="ttdoc">The emplace function adds an element at the given index. It increases the capacity of the vector if n...</div><div class="ttdef"><b>Definition:</b> vector.c:186</div></div>
+<div class="ttc" id="avector_8c_html_a0abea506ea6c562b65e153d7a2f39a53"><div class="ttname"><a href="vector_8c.html#a0abea506ea6c562b65e153d7a2f39a53">pop_back</a></div><div class="ttdeci">static int pop_back(vector_t *this)</div><div class="ttdoc">It removes the last element of a vector.</div><div class="ttdef"><b>Definition:</b> vector.c:134</div></div>
+<div class="ttc" id="avector_8c_html_a0cb1843ea9e466c0da6e704969fbf20b"><div class="ttname"><a href="vector_8c.html#a0cb1843ea9e466c0da6e704969fbf20b">swap</a></div><div class="ttdeci">static int swap(vector_t *this, unsigned int first_element, unsigned int second_element)</div><div class="ttdoc">It swaps two elements in the vector.</div><div class="ttdef"><b>Definition:</b> vector.c:21</div></div>
+<div class="ttc" id="avector_8c_html_a15a77c0234cc96dea433b2106cb55f37"><div class="ttname"><a href="vector_8c.html#a15a77c0234cc96dea433b2106cb55f37">destructor</a></div><div class="ttdeci">static void destructor(vector_t *this)</div><div class="ttdoc">This is the destructor of a vector. It frees the pointer.</div><div class="ttdef"><b>Definition:</b> vector.c:229</div></div>
+<div class="ttc" id="avector_8c_html_a2b9322e48ab0afd5795cae35faa40e5c"><div class="ttname"><a href="vector_8c.html#a2b9322e48ab0afd5795cae35faa40e5c">emplace_back</a></div><div class="ttdeci">static int emplace_back(vector_t *this, void *data)</div><div class="ttdoc">The emplace_back function adds an element at the end. It increases the capacity of the vector if need...</div><div class="ttdef"><b>Definition:</b> vector.c:212</div></div>
 <div class="ttc" id="avector_8c_html_a2d09f0a5368447bae3801583ca227055"><div class="ttname"><a href="vector_8c.html#a2d09f0a5368447bae3801583ca227055">vector_constructor</a></div><div class="ttdeci">int vector_constructor(vector_t *this, unsigned int element_size, unsigned int element_number)</div><div class="ttdef"><b>Definition:</b> vector.c:235</div></div>
+<div class="ttc" id="avector_8c_html_a6a5ee289dfbec2bc53d1f677d55604e6"><div class="ttname"><a href="vector_8c.html#a6a5ee289dfbec2bc53d1f677d55604e6">shrink_to_fit</a></div><div class="ttdeci">static int shrink_to_fit(vector_t *this)</div><div class="ttdoc">It resizes the allocated memory to fix with the actual memory usage.</div><div class="ttdef"><b>Definition:</b> vector.c:73</div></div>
+<div class="ttc" id="avector_8c_html_a6b34223d9ed00195819977242bcfe5cf"><div class="ttname"><a href="vector_8c.html#a6b34223d9ed00195819977242bcfe5cf">erase</a></div><div class="ttdeci">static int erase(vector_t *this, unsigned int index)</div><div class="ttdoc">It erases an element of a vector at a given index. It also moves all following elements in the vector...</div><div class="ttdef"><b>Definition:</b> vector.c:122</div></div>
+<div class="ttc" id="avector_8c_html_a88b49d015c4f2e3b807182af76e4f9c1"><div class="ttname"><a href="vector_8c.html#a88b49d015c4f2e3b807182af76e4f9c1">capacity</a></div><div class="ttdeci">static unsigned int capacity(vector_t *this)</div><div class="ttdoc">It returns the capacity of the vector.</div><div class="ttdef"><b>Definition:</b> vector.c:85</div></div>
+<div class="ttc" id="avector_8c_html_a923619a7666b9044e661376bee1dc68f"><div class="ttname"><a href="vector_8c.html#a923619a7666b9044e661376bee1dc68f">print_at</a></div><div class="ttdeci">static int print_at(vector_t *this, unsigned int index, int(*print_fct)(void *data))</div><div class="ttdoc">The print_at function prints an element at the given index using print_fct function pointer....</div><div class="ttdef"><b>Definition:</b> vector.c:149</div></div>
+<div class="ttc" id="avector_8c_html_a944b10e1bde0c4bf822e0cb0c45f4218"><div class="ttname"><a href="vector_8c.html#a944b10e1bde0c4bf822e0cb0c45f4218">clear</a></div><div class="ttdeci">static int clear(vector_t *this)</div><div class="ttdoc">It clears the vector, by setting the size to 0.</div><div class="ttdef"><b>Definition:</b> vector.c:111</div></div>
+<div class="ttc" id="avector_8c_html_aa92106e7fa70911663a24b5b027f6d77"><div class="ttname"><a href="vector_8c.html#aa92106e7fa70911663a24b5b027f6d77">print</a></div><div class="ttdeci">static int print(vector_t *this, int(*print_fct)(void *data))</div><div class="ttdoc">The print function prints all elements of the vector. The format dependant on how print_fct function ...</div><div class="ttdef"><b>Definition:</b> vector.c:162</div></div>
+<div class="ttc" id="avector_8c_html_ad6eeea794e85c97e7d376a5169a9683b"><div class="ttname"><a href="vector_8c.html#ad6eeea794e85c97e7d376a5169a9683b">size</a></div><div class="ttdeci">static unsigned int size(vector_t *this)</div><div class="ttdoc">It returns the this of the vector.</div><div class="ttdef"><b>Definition:</b> vector.c:93</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ECS: source/vector.c File Reference</title>
+<title>Vector: source/vector.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -18,7 +18,6 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -27,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ECS
+   <div id="projectname">Vector
    </div>
   </td>
  </tr>
@@ -116,10 +115,869 @@ Include dependency graph for vector.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a0cb1843ea9e466c0da6e704969fbf20b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a0cb1843ea9e466c0da6e704969fbf20b">swap</a> (vector_t *this, unsigned int first_element, unsigned int second_element)</td></tr>
+<tr class="memdesc:a0cb1843ea9e466c0da6e704969fbf20b"><td class="mdescLeft">&#160;</td><td class="mdescRight">It swaps two elements in the vector.  <a href="vector_8c.html#a0cb1843ea9e466c0da6e704969fbf20b">More...</a><br /></td></tr>
+<tr class="separator:a0cb1843ea9e466c0da6e704969fbf20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1caea6c984ab27ed98a3eef609ad77fc"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a1caea6c984ab27ed98a3eef609ad77fc">front</a> (vector_t *this)</td></tr>
+<tr class="memdesc:a1caea6c984ab27ed98a3eef609ad77fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">It returns a pointer to the first element of the vector.  <a href="vector_8c.html#a1caea6c984ab27ed98a3eef609ad77fc">More...</a><br /></td></tr>
+<tr class="separator:a1caea6c984ab27ed98a3eef609ad77fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55043a3f730de6667636a5d0766dc172"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a55043a3f730de6667636a5d0766dc172">back</a> (vector_t *this)</td></tr>
+<tr class="memdesc:a55043a3f730de6667636a5d0766dc172"><td class="mdescLeft">&#160;</td><td class="mdescRight">It returns a pointer to the last element of the vector.  <a href="vector_8c.html#a55043a3f730de6667636a5d0766dc172">More...</a><br /></td></tr>
+<tr class="separator:a55043a3f730de6667636a5d0766dc172"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a253fb746d6aeed908099a6387453b282"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a253fb746d6aeed908099a6387453b282">at</a> (vector_t *this, unsigned int index)</td></tr>
+<tr class="memdesc:a253fb746d6aeed908099a6387453b282"><td class="mdescLeft">&#160;</td><td class="mdescRight">It returns a pointer to the element ask at position index.  <a href="vector_8c.html#a253fb746d6aeed908099a6387453b282">More...</a><br /></td></tr>
+<tr class="separator:a253fb746d6aeed908099a6387453b282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a5ee289dfbec2bc53d1f677d55604e6"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a6a5ee289dfbec2bc53d1f677d55604e6">shrink_to_fit</a> (vector_t *this)</td></tr>
+<tr class="memdesc:a6a5ee289dfbec2bc53d1f677d55604e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">It resizes the allocated memory to fix with the actual memory usage.  <a href="vector_8c.html#a6a5ee289dfbec2bc53d1f677d55604e6">More...</a><br /></td></tr>
+<tr class="separator:a6a5ee289dfbec2bc53d1f677d55604e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b49d015c4f2e3b807182af76e4f9c1"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a88b49d015c4f2e3b807182af76e4f9c1">capacity</a> (vector_t *this)</td></tr>
+<tr class="memdesc:a88b49d015c4f2e3b807182af76e4f9c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">It returns the capacity of the vector.  <a href="vector_8c.html#a88b49d015c4f2e3b807182af76e4f9c1">More...</a><br /></td></tr>
+<tr class="separator:a88b49d015c4f2e3b807182af76e4f9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6eeea794e85c97e7d376a5169a9683b"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#ad6eeea794e85c97e7d376a5169a9683b">size</a> (vector_t *this)</td></tr>
+<tr class="memdesc:ad6eeea794e85c97e7d376a5169a9683b"><td class="mdescLeft">&#160;</td><td class="mdescRight">It returns the this of the vector.  <a href="vector_8c.html#ad6eeea794e85c97e7d376a5169a9683b">More...</a><br /></td></tr>
+<tr class="separator:ad6eeea794e85c97e7d376a5169a9683b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03e4f195e185c321ede45a023da9bbed"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a03e4f195e185c321ede45a023da9bbed">empty</a> (vector_t *this)</td></tr>
+<tr class="memdesc:a03e4f195e185c321ede45a023da9bbed"><td class="mdescLeft">&#160;</td><td class="mdescRight">It returns if the vector is empty or not.  <a href="vector_8c.html#a03e4f195e185c321ede45a023da9bbed">More...</a><br /></td></tr>
+<tr class="separator:a03e4f195e185c321ede45a023da9bbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a944b10e1bde0c4bf822e0cb0c45f4218"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a944b10e1bde0c4bf822e0cb0c45f4218">clear</a> (vector_t *this)</td></tr>
+<tr class="memdesc:a944b10e1bde0c4bf822e0cb0c45f4218"><td class="mdescLeft">&#160;</td><td class="mdescRight">It clears the vector, by setting the size to 0.  <a href="vector_8c.html#a944b10e1bde0c4bf822e0cb0c45f4218">More...</a><br /></td></tr>
+<tr class="separator:a944b10e1bde0c4bf822e0cb0c45f4218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b34223d9ed00195819977242bcfe5cf"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a6b34223d9ed00195819977242bcfe5cf">erase</a> (vector_t *this, unsigned int index)</td></tr>
+<tr class="memdesc:a6b34223d9ed00195819977242bcfe5cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">It erases an element of a vector at a given index. It also moves all following elements in the vector.  <a href="vector_8c.html#a6b34223d9ed00195819977242bcfe5cf">More...</a><br /></td></tr>
+<tr class="separator:a6b34223d9ed00195819977242bcfe5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0abea506ea6c562b65e153d7a2f39a53"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a0abea506ea6c562b65e153d7a2f39a53">pop_back</a> (vector_t *this)</td></tr>
+<tr class="memdesc:a0abea506ea6c562b65e153d7a2f39a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">It removes the last element of a vector.  <a href="vector_8c.html#a0abea506ea6c562b65e153d7a2f39a53">More...</a><br /></td></tr>
+<tr class="separator:a0abea506ea6c562b65e153d7a2f39a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a923619a7666b9044e661376bee1dc68f"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a923619a7666b9044e661376bee1dc68f">print_at</a> (vector_t *this, unsigned int index, int(*print_fct)(void *data))</td></tr>
+<tr class="memdesc:a923619a7666b9044e661376bee1dc68f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The print_at function prints an element at the given index using print_fct function pointer. The format dependant on how print_fct function pointer print the data.  <a href="vector_8c.html#a923619a7666b9044e661376bee1dc68f">More...</a><br /></td></tr>
+<tr class="separator:a923619a7666b9044e661376bee1dc68f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa92106e7fa70911663a24b5b027f6d77"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#aa92106e7fa70911663a24b5b027f6d77">print</a> (vector_t *this, int(*print_fct)(void *data))</td></tr>
+<tr class="memdesc:aa92106e7fa70911663a24b5b027f6d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">The print function prints all elements of the vector. The format dependant on how print_fct function pointer print the data.  <a href="vector_8c.html#aa92106e7fa70911663a24b5b027f6d77">More...</a><br /></td></tr>
+<tr class="separator:aa92106e7fa70911663a24b5b027f6d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04300d5fbd80537d62376d156c9ec278"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a04300d5fbd80537d62376d156c9ec278">emplace</a> (vector_t *this, void *data, unsigned int index)</td></tr>
+<tr class="memdesc:a04300d5fbd80537d62376d156c9ec278"><td class="mdescLeft">&#160;</td><td class="mdescRight">The emplace function adds an element at the given index. It increases the capacity of the vector if needed.  <a href="vector_8c.html#a04300d5fbd80537d62376d156c9ec278">More...</a><br /></td></tr>
+<tr class="separator:a04300d5fbd80537d62376d156c9ec278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b9322e48ab0afd5795cae35faa40e5c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a2b9322e48ab0afd5795cae35faa40e5c">emplace_back</a> (vector_t *this, void *data)</td></tr>
+<tr class="memdesc:a2b9322e48ab0afd5795cae35faa40e5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The emplace_back function adds an element at the end. It increases the capacity of the vector if needed.  <a href="vector_8c.html#a2b9322e48ab0afd5795cae35faa40e5c">More...</a><br /></td></tr>
+<tr class="separator:a2b9322e48ab0afd5795cae35faa40e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15a77c0234cc96dea433b2106cb55f37"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a15a77c0234cc96dea433b2106cb55f37">destructor</a> (vector_t *this)</td></tr>
+<tr class="memdesc:a15a77c0234cc96dea433b2106cb55f37"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the destructor of a vector. It frees the pointer.  <a href="vector_8c.html#a15a77c0234cc96dea433b2106cb55f37">More...</a><br /></td></tr>
+<tr class="separator:a15a77c0234cc96dea433b2106cb55f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d09f0a5368447bae3801583ca227055"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055">vector_constructor</a> (vector_t *this, unsigned int element_size, unsigned int element_number)</td></tr>
 <tr class="separator:a2d09f0a5368447bae3801583ca227055"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a253fb746d6aeed908099a6387453b282" name="a253fb746d6aeed908099a6387453b282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a253fb746d6aeed908099a6387453b282">&#9670;&#160;</a></span>at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void * at </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It returns a pointer to the element ask at position index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector on which find an element. </td></tr>
+    <tr><td class="paramname">index</td><td>The position of the element in the vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the element asked. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a253fb746d6aeed908099a6387453b282_icgraph.png" border="0" usemap="#avector_8c_a253fb746d6aeed908099a6387453b282_icgraph" alt=""/></div>
+<map name="avector_8c_a253fb746d6aeed908099a6387453b282_icgraph" id="avector_8c_a253fb746d6aeed908099a6387453b282_icgraph">
+<area shape="rect" title="It returns a pointer to the element ask at position index." alt="" coords="184,5,223,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a55043a3f730de6667636a5d0766dc172" name="a55043a3f730de6667636a5d0766dc172"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55043a3f730de6667636a5d0766dc172">&#9670;&#160;</a></span>back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void * back </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It returns a pointer to the last element of the vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector on which find an element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the last element. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a55043a3f730de6667636a5d0766dc172_icgraph.png" border="0" usemap="#avector_8c_a55043a3f730de6667636a5d0766dc172_icgraph" alt=""/></div>
+<map name="avector_8c_a55043a3f730de6667636a5d0766dc172_icgraph" id="avector_8c_a55043a3f730de6667636a5d0766dc172_icgraph">
+<area shape="rect" title="It returns a pointer to the last element of the vector." alt="" coords="184,5,235,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a88b49d015c4f2e3b807182af76e4f9c1" name="a88b49d015c4f2e3b807182af76e4f9c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b49d015c4f2e3b807182af76e4f9c1">&#9670;&#160;</a></span>capacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned int capacity </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It returns the capacity of the vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector to be ckeck. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The capacity of the vector as unsigned int. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a88b49d015c4f2e3b807182af76e4f9c1_icgraph.png" border="0" usemap="#avector_8c_a88b49d015c4f2e3b807182af76e4f9c1_icgraph" alt=""/></div>
+<map name="avector_8c_a88b49d015c4f2e3b807182af76e4f9c1_icgraph" id="avector_8c_a88b49d015c4f2e3b807182af76e4f9c1_icgraph">
+<area shape="rect" title="It returns the capacity of the vector." alt="" coords="184,5,255,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a944b10e1bde0c4bf822e0cb0c45f4218" name="a944b10e1bde0c4bf822e0cb0c45f4218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a944b10e1bde0c4bf822e0cb0c45f4218">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int clear </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It clears the vector, by setting the size to 0. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector to be clear. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a944b10e1bde0c4bf822e0cb0c45f4218_icgraph.png" border="0" usemap="#avector_8c_a944b10e1bde0c4bf822e0cb0c45f4218_icgraph" alt=""/></div>
+<map name="avector_8c_a944b10e1bde0c4bf822e0cb0c45f4218_icgraph" id="avector_8c_a944b10e1bde0c4bf822e0cb0c45f4218_icgraph">
+<area shape="rect" title="It clears the vector, by setting the size to 0." alt="" coords="184,5,235,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a15a77c0234cc96dea433b2106cb55f37" name="a15a77c0234cc96dea433b2106cb55f37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15a77c0234cc96dea433b2106cb55f37">&#9670;&#160;</a></span>destructor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void destructor </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This is the destructor of a vector. It frees the pointer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector to be free. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a15a77c0234cc96dea433b2106cb55f37_icgraph.png" border="0" usemap="#avector_8c_a15a77c0234cc96dea433b2106cb55f37_icgraph" alt=""/></div>
+<map name="avector_8c_a15a77c0234cc96dea433b2106cb55f37_icgraph" id="avector_8c_a15a77c0234cc96dea433b2106cb55f37_icgraph">
+<area shape="rect" title="This is the destructor of a vector. It frees the pointer." alt="" coords="184,5,264,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a04300d5fbd80537d62376d156c9ec278" name="a04300d5fbd80537d62376d156c9ec278"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04300d5fbd80537d62376d156c9ec278">&#9670;&#160;</a></span>emplace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int emplace </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The emplace function adds an element at the given index. It increases the capacity of the vector if needed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector on which adds an element. </td></tr>
+    <tr><td class="paramname">data</td><td>The data to be added. </td></tr>
+    <tr><td class="paramname">index</td><td>The index where the data must be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0, or -1 if an error occurs. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a04300d5fbd80537d62376d156c9ec278_icgraph.png" border="0" usemap="#avector_8c_a04300d5fbd80537d62376d156c9ec278_icgraph" alt=""/></div>
+<map name="avector_8c_a04300d5fbd80537d62376d156c9ec278_icgraph" id="avector_8c_a04300d5fbd80537d62376d156c9ec278_icgraph">
+<area shape="rect" title="The emplace function adds an element at the given index. It increases the capacity of the vector if n..." alt="" coords="184,5,255,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2b9322e48ab0afd5795cae35faa40e5c" name="a2b9322e48ab0afd5795cae35faa40e5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b9322e48ab0afd5795cae35faa40e5c">&#9670;&#160;</a></span>emplace_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int emplace_back </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The emplace_back function adds an element at the end. It increases the capacity of the vector if needed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector on which adds an element. </td></tr>
+    <tr><td class="paramname">data</td><td>The data to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0, or -1 if an error occurs. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a2b9322e48ab0afd5795cae35faa40e5c_icgraph.png" border="0" usemap="#avector_8c_a2b9322e48ab0afd5795cae35faa40e5c_icgraph" alt=""/></div>
+<map name="avector_8c_a2b9322e48ab0afd5795cae35faa40e5c_icgraph" id="avector_8c_a2b9322e48ab0afd5795cae35faa40e5c_icgraph">
+<area shape="rect" title="The emplace_back function adds an element at the end. It increases the capacity of the vector if need..." alt="" coords="184,5,291,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a03e4f195e185c321ede45a023da9bbed" name="a03e4f195e185c321ede45a023da9bbed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03e4f195e185c321ede45a023da9bbed">&#9670;&#160;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool empty </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It returns if the vector is empty or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector to be check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True, or false if the vector isn't empty. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a03e4f195e185c321ede45a023da9bbed_icgraph.png" border="0" usemap="#avector_8c_a03e4f195e185c321ede45a023da9bbed_icgraph" alt=""/></div>
+<map name="avector_8c_a03e4f195e185c321ede45a023da9bbed_icgraph" id="avector_8c_a03e4f195e185c321ede45a023da9bbed_icgraph">
+<area shape="rect" title="It returns if the vector is empty or not." alt="" coords="184,5,241,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6b34223d9ed00195819977242bcfe5cf" name="a6b34223d9ed00195819977242bcfe5cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b34223d9ed00195819977242bcfe5cf">&#9670;&#160;</a></span>erase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int erase </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It erases an element of a vector at a given index. It also moves all following elements in the vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector on which the element will be removed. </td></tr>
+    <tr><td class="paramname">index</td><td>The element position on the vector to be removed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0, or -1 if an error occurs. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a6b34223d9ed00195819977242bcfe5cf_icgraph.png" border="0" usemap="#avector_8c_a6b34223d9ed00195819977242bcfe5cf_icgraph" alt=""/></div>
+<map name="avector_8c_a6b34223d9ed00195819977242bcfe5cf_icgraph" id="avector_8c_a6b34223d9ed00195819977242bcfe5cf_icgraph">
+<area shape="rect" title="It erases an element of a vector at a given index. It also moves all following elements in the vector..." alt="" coords="184,5,239,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1caea6c984ab27ed98a3eef609ad77fc" name="a1caea6c984ab27ed98a3eef609ad77fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1caea6c984ab27ed98a3eef609ad77fc">&#9670;&#160;</a></span>front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void * front </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It returns a pointer to the first element of the vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector on which find an element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the last element. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a1caea6c984ab27ed98a3eef609ad77fc_icgraph.png" border="0" usemap="#avector_8c_a1caea6c984ab27ed98a3eef609ad77fc_icgraph" alt=""/></div>
+<map name="avector_8c_a1caea6c984ab27ed98a3eef609ad77fc_icgraph" id="avector_8c_a1caea6c984ab27ed98a3eef609ad77fc_icgraph">
+<area shape="rect" title="It returns a pointer to the first element of the vector." alt="" coords="184,5,232,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0abea506ea6c562b65e153d7a2f39a53" name="a0abea506ea6c562b65e153d7a2f39a53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0abea506ea6c562b65e153d7a2f39a53">&#9670;&#160;</a></span>pop_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int pop_back </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It removes the last element of a vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector on which the element will be removed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a0abea506ea6c562b65e153d7a2f39a53_icgraph.png" border="0" usemap="#avector_8c_a0abea506ea6c562b65e153d7a2f39a53_icgraph" alt=""/></div>
+<map name="avector_8c_a0abea506ea6c562b65e153d7a2f39a53_icgraph" id="avector_8c_a0abea506ea6c562b65e153d7a2f39a53_icgraph">
+<area shape="rect" title="It removes the last element of a vector." alt="" coords="184,5,263,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa92106e7fa70911663a24b5b027f6d77" name="aa92106e7fa70911663a24b5b027f6d77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa92106e7fa70911663a24b5b027f6d77">&#9670;&#160;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int print </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(void *data)&#160;</td>
+          <td class="paramname"><em>print_fct</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The print function prints all elements of the vector. The format dependant on how print_fct function pointer print the data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector on which print all elements. </td></tr>
+    <tr><td class="paramname">print_fct</td><td>The function pointer used to know how to print an element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0, or -1 if print_fct return -1. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_aa92106e7fa70911663a24b5b027f6d77_cgraph.png" border="0" usemap="#avector_8c_aa92106e7fa70911663a24b5b027f6d77_cgraph" alt=""/></div>
+<map name="avector_8c_aa92106e7fa70911663a24b5b027f6d77_cgraph" id="avector_8c_aa92106e7fa70911663a24b5b027f6d77_cgraph">
+<area shape="rect" title="The print function prints all elements of the vector. The format dependant on how print_fct function ..." alt="" coords="5,5,52,31"/>
+<area shape="rect" href="vector_8c.html#a923619a7666b9044e661376bee1dc68f" title="The print_at function prints an element at the given index using print_fct function pointer...." alt="" coords="100,5,165,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_aa92106e7fa70911663a24b5b027f6d77_icgraph.png" border="0" usemap="#avector_8c_aa92106e7fa70911663a24b5b027f6d77_icgraph" alt=""/></div>
+<map name="avector_8c_aa92106e7fa70911663a24b5b027f6d77_icgraph" id="avector_8c_aa92106e7fa70911663a24b5b027f6d77_icgraph">
+<area shape="rect" title="The print function prints all elements of the vector. The format dependant on how print_fct function ..." alt="" coords="184,5,231,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a923619a7666b9044e661376bee1dc68f" name="a923619a7666b9044e661376bee1dc68f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a923619a7666b9044e661376bee1dc68f">&#9670;&#160;</a></span>print_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int print_at </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(void *data)&#160;</td>
+          <td class="paramname"><em>print_fct</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The print_at function prints an element at the given index using print_fct function pointer. The format dependant on how print_fct function pointer print the data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector on which print an element. </td></tr>
+    <tr><td class="paramname">index</td><td>The position of the element to print. </td></tr>
+    <tr><td class="paramname">print_fct</td><td>The function pointer used to know how to print an element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>It returns the value of print_fct, or -1 if an error occurs. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a923619a7666b9044e661376bee1dc68f_icgraph.png" border="0" usemap="#avector_8c_a923619a7666b9044e661376bee1dc68f_icgraph" alt=""/></div>
+<map name="avector_8c_a923619a7666b9044e661376bee1dc68f_icgraph" id="avector_8c_a923619a7666b9044e661376bee1dc68f_icgraph">
+<area shape="rect" title="The print_at function prints an element at the given index using print_fct function pointer...." alt="" coords="279,31,344,56"/>
+<area shape="rect" href="vector_8c.html#aa92106e7fa70911663a24b5b027f6d77" title="The print function prints all elements of the vector. The format dependant on how print_fct function ..." alt="" coords="184,5,231,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,31,136,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6a5ee289dfbec2bc53d1f677d55604e6" name="a6a5ee289dfbec2bc53d1f677d55604e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a5ee289dfbec2bc53d1f677d55604e6">&#9670;&#160;</a></span>shrink_to_fit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int shrink_to_fit </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It resizes the allocated memory to fix with the actual memory usage. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector the to be udpate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0, or -1 if an error occurs. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a6a5ee289dfbec2bc53d1f677d55604e6_icgraph.png" border="0" usemap="#avector_8c_a6a5ee289dfbec2bc53d1f677d55604e6_icgraph" alt=""/></div>
+<map name="avector_8c_a6a5ee289dfbec2bc53d1f677d55604e6_icgraph" id="avector_8c_a6a5ee289dfbec2bc53d1f677d55604e6_icgraph">
+<area shape="rect" title="It resizes the allocated memory to fix with the actual memory usage." alt="" coords="184,5,276,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad6eeea794e85c97e7d376a5169a9683b" name="ad6eeea794e85c97e7d376a5169a9683b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6eeea794e85c97e7d376a5169a9683b">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned int size </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It returns the this of the vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector to be check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The size of the vector as unsigned int. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_ad6eeea794e85c97e7d376a5169a9683b_icgraph.png" border="0" usemap="#avector_8c_ad6eeea794e85c97e7d376a5169a9683b_icgraph" alt=""/></div>
+<map name="avector_8c_ad6eeea794e85c97e7d376a5169a9683b_icgraph" id="avector_8c_ad6eeea794e85c97e7d376a5169a9683b_icgraph">
+<area shape="rect" title="It returns the this of the vector." alt="" coords="184,5,229,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0cb1843ea9e466c0da6e704969fbf20b" name="a0cb1843ea9e466c0da6e704969fbf20b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb1843ea9e466c0da6e704969fbf20b">&#9670;&#160;</a></span>swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int swap </td>
+          <td>(</td>
+          <td class="paramtype">vector_t *&#160;</td>
+          <td class="paramname"><em>this</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>first_element</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>second_element</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>It swaps two elements in the vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">this</td><td>The vector_t object. </td></tr>
+    <tr><td class="paramname">first_element</td><td>The index of the first element to swap. </td></tr>
+    <tr><td class="paramname">second_element</td><td>the index of the second element to swap. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0, or -1 if an error occurs. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a0cb1843ea9e466c0da6e704969fbf20b_icgraph.png" border="0" usemap="#avector_8c_a0cb1843ea9e466c0da6e704969fbf20b_icgraph" alt=""/></div>
+<map name="avector_8c_a0cb1843ea9e466c0da6e704969fbf20b_icgraph" id="avector_8c_a0cb1843ea9e466c0da6e704969fbf20b_icgraph">
+<area shape="rect" title="It swaps two elements in the vector." alt="" coords="184,5,237,31"/>
+<area shape="rect" href="vector_8c.html#a2d09f0a5368447bae3801583ca227055" title=" " alt="" coords="5,5,136,31"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a2d09f0a5368447bae3801583ca227055" name="a2d09f0a5368447bae3801583ca227055"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2d09f0a5368447bae3801583ca227055">&#9670;&#160;</a></span>vector_constructor()</h2>
 
@@ -151,6 +1009,30 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="vector_8c_a2d09f0a5368447bae3801583ca227055_cgraph.png" border="0" usemap="#avector_8c_a2d09f0a5368447bae3801583ca227055_cgraph" alt=""/></div>
+<map name="avector_8c_a2d09f0a5368447bae3801583ca227055_cgraph" id="avector_8c_a2d09f0a5368447bae3801583ca227055_cgraph">
+<area shape="rect" title=" " alt="" coords="5,376,136,401"/>
+<area shape="rect" href="vector_8c.html#a253fb746d6aeed908099a6387453b282" title="It returns a pointer to the element ask at position index." alt="" coords="218,5,257,31"/>
+<area shape="rect" href="vector_8c.html#a55043a3f730de6667636a5d0766dc172" title="It returns a pointer to the last element of the vector." alt="" coords="212,55,263,80"/>
+<area shape="rect" href="vector_8c.html#a88b49d015c4f2e3b807182af76e4f9c1" title="It returns the capacity of the vector." alt="" coords="202,104,273,129"/>
+<area shape="rect" href="vector_8c.html#a944b10e1bde0c4bf822e0cb0c45f4218" title="It clears the vector, by setting the size to 0." alt="" coords="212,153,263,179"/>
+<area shape="rect" href="vector_8c.html#a15a77c0234cc96dea433b2106cb55f37" title="This is the destructor of a vector. It frees the pointer." alt="" coords="197,203,277,228"/>
+<area shape="rect" href="vector_8c.html#a04300d5fbd80537d62376d156c9ec278" title="The emplace function adds an element at the given index. It increases the capacity of the vector if n..." alt="" coords="202,252,273,277"/>
+<area shape="rect" href="vector_8c.html#a2b9322e48ab0afd5795cae35faa40e5c" title="The emplace_back function adds an element at the end. It increases the capacity of the vector if need..." alt="" coords="184,301,291,327"/>
+<area shape="rect" href="vector_8c.html#a03e4f195e185c321ede45a023da9bbed" title="It returns if the vector is empty or not." alt="" coords="209,351,266,376"/>
+<area shape="rect" href="vector_8c.html#a6b34223d9ed00195819977242bcfe5cf" title="It erases an element of a vector at a given index. It also moves all following elements in the vector..." alt="" coords="210,400,265,425"/>
+<area shape="rect" href="vector_8c.html#a1caea6c984ab27ed98a3eef609ad77fc" title="It returns a pointer to the first element of the vector." alt="" coords="213,449,261,475"/>
+<area shape="rect" href="vector_8c.html#a0abea506ea6c562b65e153d7a2f39a53" title="It removes the last element of a vector." alt="" coords="198,499,277,524"/>
+<area shape="rect" href="vector_8c.html#aa92106e7fa70911663a24b5b027f6d77" title="The print function prints all elements of the vector. The format dependant on how print_fct function ..." alt="" coords="214,548,261,573"/>
+<area shape="rect" href="vector_8c.html#a923619a7666b9044e661376bee1dc68f" title="The print_at function prints an element at the given index using print_fct function pointer...." alt="" coords="339,573,404,599"/>
+<area shape="rect" href="vector_8c.html#a6a5ee289dfbec2bc53d1f677d55604e6" title="It resizes the allocated memory to fix with the actual memory usage." alt="" coords="191,649,283,675"/>
+<area shape="rect" href="vector_8c.html#ad6eeea794e85c97e7d376a5169a9683b" title="It returns the this of the vector." alt="" coords="215,699,260,724"/>
+<area shape="rect" href="vector_8c.html#a0cb1843ea9e466c0da6e704969fbf20b" title="It swaps two elements in the vector." alt="" coords="211,748,264,773"/>
+</map>
+</div>
 
 </div>
 </div>
