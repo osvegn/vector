@@ -1,7 +1,7 @@
 set(VECTOR_TESTS_ROOT ${PROJECT_SOURCE_DIR}/tests/unit_tests)
-set(CRITERION_INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/submodules/Criterion/include)
+set(CRITERION_INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/lib/criterion-2.4.2/include)
 
-set(CRITERION_LIB ${PROJECT_SOURCE_DIR}/submodules/Criterion/build/src/libcriterion.so)
+set(CRITERION_LIB ${PROJECT_SOURCE_DIR}/lib/criterion-2.4.2/lib/libcriterion.so)
 # set(VECTOR_INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/include)
 
 # set(TARGET vector_tests)
@@ -25,8 +25,8 @@ set(SOURCES
     ${VECTOR_TESTS_ROOT}/vector_swap.c
 )
 
-add_compile_options("-lcriterion" "--coverage" "-fprofile-arcs" "-ftest-coverage")
-add_link_options("-lcriterion" "--coverage" "-fprofile-arcs" "-ftest-coverage")
+add_compile_options("--coverage" "-fprofile-arcs" "-ftest-coverage")
+add_link_options("--coverage" "-fprofile-arcs" "-ftest-coverage")
 
 # add_executable(${TARGET} ${SOURCE} ${VECTOR_SOURCE})
 
@@ -60,7 +60,8 @@ endfunction()
 
 foreach(SOURCE ${SOURCES})
     string(REPLACE "/" ";" SOURCE_LIST ${SOURCE})
-    list(GET SOURCE_LIST -1 T_NAME)
+    list(GET SOURCE_LIST -1 SOURCE_ITEM)
+    string(REPLACE ".c" "" T_NAME ${SOURCE_ITEM})
     create_test(
         TEST_NAME ${T_NAME}
         TEST_SRC ${SOURCE}

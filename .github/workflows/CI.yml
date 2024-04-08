@@ -63,67 +63,57 @@ jobs:
           cd build
           ctest --output-on-failure
 
-#  tests-linux:
-#    runs-on: ubuntu-22.04
-#    needs: build
-#    steps:
-#      - name: Install dependencies
-#        run: |
-#          sudo apt-get update -y && sudo apt-get upgrade
-#
-#      - name: Install criterion
-#        run: |
-#          sudo apt-get install gcovr
-#          sudo apt-get install meson
-#          git clone --recursive https://github.com/Snaipe/Criterion Criterion
-#          cd Criterion
-#          meson build
-#          ninja -C build
-#          sudo ninja -C build install
-#
-#      - name: Make Criterion available
-#        run: |
-#          cd Criterion
-#          sudo ldconfig
-#
-#      - name: Checkout repository
-#        uses: actions/checkout@v3
-#
-#      - name: Run tests
-#        run: |
-#          cmake -B build -DTESTING=ON
-#          cmake --build build
-#          cd build
-#          ctest --output-on-failure
-#          cd ..
-#
-#      - name: Check memory leaks
-#        run: |
-#          sudo apt-get install valgrind -y
-#          cd build
-#          files=$(find . -name "test_*" -executable -type f)
-#          for file in $files; do
-#            valgrind --leak-check=full --error-exitcode=1 ./$file
-#          done
-#
-#      - name: Coverage report
-#        run: |
-#          mkdir -p coverage
-#          gcovr -e tests --html-details coverage/index.html
-#          gcovr -e tests --xml coverage.xml
-#
-#      - name: Upload coverage report
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: Coverage-report
-#          path: ./coverage
-#
-#      - name: Upload Vector code coverage
-#        uses: JamesIves/github-pages-deploy-action@v4
-#        with:
-#          folder: ./coverage
-#          target-folder: docs/coverage
-#          branch: gh-pages
-#
-#      - name: Upload coverage reports to Codecov
-#        uses: codecov/codecov-action@v3
+  tests-linux:
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -y && sudo apt-get upgrade
+
+      - name: Install criterion
+        run: |
+          cd lib
+          ./setup_criterion.sh
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run tests
+        run: |
+          cmake -B build -DTESTING=ON
+          cmake --build build
+          cd build
+          ctest --output-on-failure
+          cd ..
+
+      - name: Check memory leaks
+        run: |
+          sudo apt-get install valgrind -y
+          cd build
+          files=$(find . -name "test_*" -executable -type f)
+          for file in $files; do
+            valgrind --leak-check=full --error-exitcode=1 ./$file
+          done
+
+      - name: Coverage report
+        run: |
+          mkdir -p coverage
+          gcovr -e tests --html-details coverage/index.html
+          gcovr -e tests --xml coverage.xml
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: Coverage-report
+          path: ./coverage
+
+      - name: Upload Vector code coverage
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./coverage
+          target-folder: docs/coverage
+          branch: gh-pages
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
