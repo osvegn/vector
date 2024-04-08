@@ -20,6 +20,7 @@
 /// int rvalue = CAST(int, vector.front(&vector))
 #define CAST(type, value) (*(type *)value)
 
+/// @struct vector_s (vector_t)
 /// @brief The vector structure is used to store multiple data from the same
 /// type allong the memory.
 /// It stores some informations such as the size of an element, the number of
