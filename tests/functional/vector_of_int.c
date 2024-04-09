@@ -19,7 +19,7 @@ static int my_return(int value, char *message)
 
 int main(void)
 {
-    vector_t vector = {0};
+    vector_t vector, copy_vector = {0};
     int rvalue = vector_constructor(&vector, sizeof(int), 0);
 
     if (rvalue < 0)
@@ -29,8 +29,13 @@ int main(void)
         if (rvalue < 0)
             return my_return(rvalue, "Emplace_back failure.");
     }
+    rvalue = vector.operation_eq(&vector, &copy_vector);
+    if (rvalue < 0)
+        return my_return(rvalue, "operation_eq failure.");
     if (CAST(int, vector.front(&vector)) != 0)
         return my_return(rvalue, "Front failure.");
+    if (CAST(int, vector.front(&vector)) != CAST(int, copy_vector.front(&copy_vector)))
+        return my_return(-1, "Dest and Src differ.");
     vector.destructor(&vector);
     return 0;
 }

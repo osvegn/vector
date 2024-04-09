@@ -23,6 +23,7 @@ set(SOURCES
     ${VECTOR_TESTS_ROOT}/vector_shrink_to_fit.c
     ${VECTOR_TESTS_ROOT}/vector_size.c
     ${VECTOR_TESTS_ROOT}/vector_swap.c
+    ${VECTOR_TESTS_ROOT}/vector_operation_eq.c
 )
 
 add_compile_options("--coverage" "-fprofile-arcs" "-ftest-coverage")

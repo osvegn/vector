@@ -6,3 +6,44 @@ This is an implementation of a vector library for C language.
 
 # Documentation
 You can follow the technique documentation just [here](https://osvegn.github.io/vector/Vector/).
+
+# Methods
+- [x] constructor
+- [x] destructor
+- [x] operator=
+- [ ] assign
+- [ ] assign_range
+- [ ] get_allocator
+- [x] at
+- [ ] operator[]
+- [x] front
+- [x] back
+- [ ] data
+- [ ] begin
+- [ ] end
+- [ ] rbegin
+- [ ] rend
+- [x] empty
+- [x] size
+- [ ] max_size
+- [ ] reserve
+- [x] capacity
+- [x] shrink_to_fit
+- [x] clear
+- [ ] insert
+- [ ] insert_range
+- [x] emplace
+- [x] erase
+- [ ] push_back
+- [x] emplace_back
+- [ ] append_range
+- [x] pop_back
+- [ ] resize
+- [x] swap
+- [ ] eq
+- [ ] neq
+- [ ] lt
+- [ ] le
+- [ ] gt
+- [ ] ge
+- [ ] 

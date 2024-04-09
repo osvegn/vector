@@ -232,6 +232,21 @@ static void destructor(vector_t *this)
         free(this->pointer);
 }
 
+static int operator_eq(vector_t *this, vector_t *new)
+{
+    int rvalue = vector_constructor(new, this->_element_size, this->_size);
+    void *elem = 0;
+
+    if (rvalue < 0) {
+        return -1;
+    }
+    for (int i = 0; i < this->_size; i++) {
+        elem = this->at(this, i);
+        new->emplace(new, elem, i);
+    }
+    return 0;
+}
+
 int vector_constructor(vector_t *this, unsigned int element_size, unsigned int element_number)
 {
     this->_element_size = element_size;
@@ -256,5 +271,6 @@ int vector_constructor(vector_t *this, unsigned int element_size, unsigned int e
     this->size = &size;
     this->capacity = &capacity;
     this->shrink_to_fit = &shrink_to_fit;
+    this->operation_eq = &operator_eq;
     return 0;
 }
