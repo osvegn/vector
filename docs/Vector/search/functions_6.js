@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['pop_5fback_0',['pop_back',['../vector_8c.html#a0abea506ea6c562b65e153d7a2f39a53',1,'vector.c']]],
-  ['print_1',['print',['../vector_8c.html#aa92106e7fa70911663a24b5b027f6d77',1,'vector.c']]],
-  ['print_5fat_2',['print_at',['../vector_8c.html#a923619a7666b9044e661376bee1dc68f',1,'vector.c']]]
+  ['operator_5feq_0',['operator_eq',['../vector_8c.html#a352b425ab4789826b45f00f5e440f45a',1,'vector.c']]]
 ];

@@ -10,6 +10,7 @@ var vector_8c =
     [ "empty", "vector_8c.html#a03e4f195e185c321ede45a023da9bbed", null ],
     [ "erase", "vector_8c.html#a6b34223d9ed00195819977242bcfe5cf", null ],
     [ "front", "vector_8c.html#a1caea6c984ab27ed98a3eef609ad77fc", null ],
+    [ "operator_eq", "vector_8c.html#a352b425ab4789826b45f00f5e440f45a", null ],
     [ "pop_back", "vector_8c.html#a0abea506ea6c562b65e153d7a2f39a53", null ],
     [ "print", "vector_8c.html#aa92106e7fa70911663a24b5b027f6d77", null ],
     [ "print_at", "vector_8c.html#a923619a7666b9044e661376bee1dc68f", null ],
