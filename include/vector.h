@@ -45,62 +45,10 @@ typedef struct vector_s {
     /// @param this The vector to be free.
     void (*destructor)(struct vector_s *this);
 
-    /// @brief The emplace function adds an element at the given index.
-    /// It increases the capacity of the vector if needed.
-    /// @param this The vector on which adds an element.
-    /// @param data The data to be added.
-    /// @param index The index where the data must be added.
-    /// @return 0, or -1 if an error occurs.
-    int (*emplace)(struct vector_s *this, void *data, unsigned int index);
+    int (*operation_eq)(struct vector_s *this, struct vector_s *new);
 
-    /// @brief The emplace_back function adds an element at the end.
-    /// It increases the capacity of the vector if needed.
-    /// @param this The vector on which adds an element.
-    /// @param data The data to be added.
-    /// @return 0, or -1 if an error occurs.
-    int (*emplace_back)(struct vector_s *this, void *data);
 
-    /// @brief The print_at function prints an element at the given index
-    /// using print_fct function pointer.
-    /// The format dependant on how print_fct function pointer print the data.
-    /// @param this The vector on which print an element.
-    /// @param index The position of the element to print.
-    /// @param print_fct The function pointer used to know how to print an
-    /// element.
-    /// @return It returns the value of print_fct.
-    int (*print_at)(struct vector_s *this, unsigned int index, int (*print_fct)(void *data));
-
-    /// @brief The print function prints all elements of the vector.
-    /// The format dependant on how print_fct function pointer print the data.
-    /// @param this The vector on which print all elements.
-    /// @param print_fct The function pointer used to know how to print an
-    /// element.
-    /// @return 0, or -1 if print_fct return -1.
-    int (*print)(struct vector_s *this, int (*print_fct)(void *data));
-
-    /// @brief It clears the vector, by setting the size to 0.
-    /// @param this The vector to be clear.
-    /// @return 0.
-    int (*clear)(struct vector_s *this);
-
-    /// @brief It erases an element of a vector at a given index.
-    /// It also moves all following elements in the vector.
-    /// @param this The vector on which the element will be removed.
-    /// @param index The element position on the vector to be removed.
-    /// @return 0, or -1 if an error occurs.
-    int (*erase)(struct vector_s *this, unsigned int index);
-
-    /// @brief It removes the last element of a vector.
-    /// @param this The vector on which the element will be removed.
-    /// @return 0.
-    int (*pop_back)(struct vector_s *this);
-
-    /// @brief It swaps two elements in the vector.
-    /// @param this The vector_t object.
-    /// @param first_element The index of the first element to swap.
-    /// @param second_element the index of the second element to swap.
-    /// @return 0, or -1 if an error occurs.
-    int (*swap)(struct vector_s *this, unsigned int first_element, unsigned int second_element);
+        /// Element access
 
     /// @brief It returns a pointer to the element ask at position index.
     /// @param this The vector on which find an element.
@@ -117,6 +65,8 @@ typedef struct vector_s {
     /// @param this The vector on which find an element.
     /// @return A pointer to the last element.
     void *(*front)(struct vector_s *this);
+
+        /// Capacity
 
     /// @brief It returns if the vector is empty or not.
     /// @param this The vector to be check.
@@ -138,7 +88,66 @@ typedef struct vector_s {
     /// @return 0, or -1 if an error occurs.
     int (*shrink_to_fit)(struct vector_s *this);
 
-    int (*operation_eq)(struct vector_s *this, struct vector_s *new);
+    /// Modifier
+
+    /// @brief It clears the vector, by setting the size to 0.
+    /// @param this The vector to be clear.
+    /// @return 0.
+    int (*clear)(struct vector_s *this);
+
+    /// @brief The emplace function adds an element at the given index.
+    /// It increases the capacity of the vector if needed.
+    /// @param this The vector on which adds an element.
+    /// @param data The data to be added.
+    /// @param index The index where the data must be added.
+    /// @return 0, or -1 if an error occurs.
+    int (*emplace)(struct vector_s *this, void *data, unsigned int index);
+
+    /// @brief It erases an element of a vector at a given index.
+    /// It also moves all following elements in the vector.
+    /// @param this The vector on which the element will be removed.
+    /// @param index The element position on the vector to be removed.
+    /// @return 0, or -1 if an error occurs.
+    int (*erase)(struct vector_s *this, unsigned int index);
+
+    /// @brief The emplace_back function adds an element at the end.
+    /// It increases the capacity of the vector if needed.
+    /// @param this The vector on which adds an element.
+    /// @param data The data to be added.
+    /// @return 0, or -1 if an error occurs.
+    int (*emplace_back)(struct vector_s *this, void *data);
+
+    /// @brief It removes the last element of a vector.
+    /// @param this The vector on which the element will be removed.
+    /// @return 0.
+    int (*pop_back)(struct vector_s *this);
+
+    /// @brief It swaps two elements in the vector.
+    /// @param this The vector_t object.
+    /// @param first_element The index of the first element to swap.
+    /// @param second_element the index of the second element to swap.
+    /// @return 0, or -1 if an error occurs.
+    int (*swap)(struct vector_s *this, unsigned int first_element, unsigned int second_element);
+
+        /// Printable
+
+    /// @brief The print_at function prints an element at the given index
+    /// using print_fct function pointer.
+    /// The format dependant on how print_fct function pointer print the data.
+    /// @param this The vector on which print an element.
+    /// @param index The position of the element to print.
+    /// @param print_fct The function pointer used to know how to print an
+    /// element.
+    /// @return It returns the value of print_fct.
+    int (*print_at)(struct vector_s *this, unsigned int index, int (*print_fct)(void *data));
+
+    /// @brief The print function prints all elements of the vector.
+    /// The format dependant on how print_fct function pointer print the data.
+    /// @param this The vector on which print all elements.
+    /// @param print_fct The function pointer used to know how to print an
+    /// element.
+    /// @return 0, or -1 if print_fct return -1.
+    int (*print)(struct vector_s *this, int (*print_fct)(void *data));
 } vector_t;
 
 /// @brief This is the constructor of the vector structure.

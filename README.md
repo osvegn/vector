@@ -14,21 +14,25 @@ You can follow the technique documentation just [here](https://osvegn.github.io/
 - [ ] assign
 - [ ] assign_range
 - [ ] get_allocator
+- ## Element access
 - [x] at
 - [ ] operator[]
 - [x] front
 - [x] back
 - [ ] data
+- ## Iterator
 - [ ] begin
 - [ ] end
 - [ ] rbegin
 - [ ] rend
+- ## Capacity
 - [x] empty
 - [x] size
 - [ ] max_size
 - [ ] reserve
 - [x] capacity
 - [x] shrink_to_fit
+- ## Modifier
 - [x] clear
 - [ ] insert
 - [ ] insert_range
@@ -40,10 +44,13 @@ You can follow the technique documentation just [here](https://osvegn.github.io/
 - [x] pop_back
 - [ ] resize
 - [x] swap
+- ## Operator
 - [ ] eq
 - [ ] neq
 - [ ] lt
 - [ ] le
 - [ ] gt
 - [ ] ge
-- [ ] 
+- ## Printable
+- [x] print_at
+- [x] print
