@@ -9,7 +9,6 @@
 
 
 #include <criterion/criterion.h>
-#include <unistd.h>
 #include "vector.h"
 
 Test(vector_operation_eq, vector_operation_eq_valid)

@@ -14,10 +14,11 @@
 
 /// @brief This maccro should help to cast a value to the desire type.
 /// Functions from vector mostly return pointer to data, it can be usefull
-/// to cast to corresponding data type. 
+/// to cast to corresponding data type.
 /// @code
 /// // Assume vector contains int data.
 /// int rvalue = CAST(int, vector.front(&vector))
+/// @warning This macro is unsafe!
 #define CAST(type, value) (*(type *)value)
 
 /// @struct vector_s (vector_t)

@@ -37,5 +37,6 @@ int main(void)
     if (CAST(int, vector.front(&vector)) != CAST(int, copy_vector.front(&copy_vector)))
         return my_return(-1, "Dest and Src differ.");
     vector.destructor(&vector);
+    copy_vector.destructor(&copy_vector);
     return 0;
 }
