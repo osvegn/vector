@@ -76,8 +76,7 @@ jobs:
 
       - name: Install criterion
         run: |
-          cd lib
-          ./setup_criterion.sh
+          ./lib/setup_submodules.sh
 
       - name: Run tests
         run: |

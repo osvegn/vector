@@ -1,7 +1,7 @@
 set(VECTOR_TESTS_ROOT ${PROJECT_SOURCE_DIR}/tests/unit_tests)
-set(CRITERION_INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/lib/criterion-2.4.2/include)
+set(CRITERION_INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/submodules/Criterion/include)
 
-set(CRITERION_LIB ${PROJECT_SOURCE_DIR}/lib/criterion-2.4.2/lib/libcriterion.so)
+set(CRITERION_LIB ${PROJECT_SOURCE_DIR}/submodules/Criterion/build/src/libcriterion.so.3.2.0)
 # set(VECTOR_INCLUDE_ROOT ${PROJECT_SOURCE_DIR}/include)
 
 # set(TARGET vector_tests)
