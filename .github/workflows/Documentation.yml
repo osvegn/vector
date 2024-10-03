@@ -26,7 +26,7 @@ jobs:
           doxyfile-path: ./doxyfile
 
       - name: Create Vector documentation artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: Vector_documentation
           path: ./docs/html
