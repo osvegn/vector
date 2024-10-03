@@ -15,15 +15,15 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-22.04, windows-2019, macos-11.0]
+        os: [ubuntu-latest, windows-latest, macos-latest]
         include:
-          - os: ubuntu-22.04
+          - os: ubuntu-latest
             compiler: gcc
-          - os: ubuntu-22.04
+          - os: ubuntu-latest
             compiler: clang
-          - os: windows-2019
+          - os: windows-latest
             compiler: msvc
-          - os: macos-11.0
+          - os: macos-latest
             compiler: clang
     runs-on: ${{ matrix.os }}
     steps:
@@ -38,15 +38,15 @@ jobs:
   functional-tests:
     strategy:
       matrix:
-        os: [ubuntu-22.04, windows-2019, macos-11.0]
+        os: [ubuntu-latest, windows-latest, macos-latest]
         include:
-          - os: ubuntu-22.04
+          - os: ubuntu-latest
             compiler: gcc
-          - os: ubuntu-22.04
+          - os: ubuntu-latest
             compiler: clang
-          - os: windows-2019
+          - os: windows-latest
             compiler: msvc
-          - os: macos-11.0
+          - os: macos-latest
             compiler: clang
     runs-on: ${{ matrix.os }}
     steps:
@@ -64,12 +64,12 @@ jobs:
           ctest --output-on-failure
 
   tests-linux:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Install dependencies
         run: |
-          sudo apt-get install -y gcovr
+          sudo apt-get install -y gcovr meson
 
       - name: Checkout repository
         uses: actions/checkout@v3
